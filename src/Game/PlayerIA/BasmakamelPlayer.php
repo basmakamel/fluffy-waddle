@@ -27,14 +27,14 @@ class BasmakamelPlayer extends Player
         // How to get all the Choices          ?    $this->result->getChoicesFor($this->mySide)
 
         // Choosing a random number & when the choice of the opponent is "friend" send "friend"
-        $rand = random_int(1, 10);
-        if ($this->result->getNbRound() == $rand && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
+        if ($this->result->getNbRound() == 7 && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
             return parent::friendChoice();
 
-        //Send "foe" when the opponent send "friend"
+        //Send "foe" when the opponent sends "friend"
         if ($this->result->getLastChoiceFor($this->opponentSide) == "friend")
             return parent::foeChoice();
 
+        //Send "friend" when the opponent sends "foe"
         if ($this->result->getLastChoiceFor($this->opponentSide) == "foe")
             return parent::friendChoice();
         else
