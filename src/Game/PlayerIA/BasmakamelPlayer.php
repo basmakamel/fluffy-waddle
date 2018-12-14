@@ -32,11 +32,11 @@ class BasmakamelPlayer extends Player
             return parent::friendChoice();
 
         //Send "foe" when the opponent send "friend"
-        if ($this->result->getLastChoiceFor($this->mySide) == "friend")
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "friend")
             return parent::foeChoice();
 
-        if ($this->result->getLastChoiceFor($this->mySide) == "foe")
-            return parent::foeChoice();
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "foe")
+            return parent::friendChoice();
         else
             return parent::foeChoice();
 
