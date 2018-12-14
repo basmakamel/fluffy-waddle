@@ -28,7 +28,7 @@ class BasmakamelPlayer extends Player
 
         // Choosing a random number & when the choice of the opponent is "friend" send "friend"
         $rand = random_int(1, 10);
-        if ($this->result->getNbRound() == $rand && $this->result->getLastChoiceFor($this->mySide) == "friend")
+        if ($this->result->getNbRound() == $rand && $this->result->getLastChoiceFor($this->opponentSide) == "friend")
             return parent::friendChoice();
 
         //Send "foe" when the opponent send "friend"
