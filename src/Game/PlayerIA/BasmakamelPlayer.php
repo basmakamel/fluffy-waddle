@@ -7,7 +7,7 @@ use Hackathon\Game\Result;
 /**
  * Class LovePlayer
  * @package Hackathon\PlayerIA
- * @author FlorentD
+ * @author BasmaKamel
  */
 class BasmakamelPlayer extends Player
 {
@@ -25,6 +25,9 @@ class BasmakamelPlayer extends Player
         // How to get the opponent Last Score  ?    $this->result->getLastScoreFor($this->opponentSide) -- if 0 (first round)
         // -------------------------------------    -----------------------------------------------------
         // How to get all the Choices          ?    $this->result->getChoicesFor($this->mySide)
+
+
+
         if ($this->result->getLastChoiceFor($this->mySide) == "friend")
             return parent::foeChoice();
         if ($this->result->getLastChoiceFor($this->mySide) == "foe")
