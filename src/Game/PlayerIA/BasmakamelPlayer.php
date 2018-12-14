@@ -27,9 +27,12 @@ class BasmakamelPlayer extends Player
         // How to get all the Choices          ?    $this->result->getChoicesFor($this->mySide)
 
 
+        if ($this->result->getNbRound() == 5 && $this->result->getLastChoiceFor($this->mySide) == "friend")
+            return parent::friendChoice();
 
         if ($this->result->getLastChoiceFor($this->mySide) == "friend")
             return parent::foeChoice();
+
         if ($this->result->getLastChoiceFor($this->mySide) == "foe")
             return parent::foeChoice();
         else
